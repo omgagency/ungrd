@@ -1,0 +1,153 @@
+<app-header-admin></app-header-admin>
+
+<div class="container-fluid">
+  <div class="row">
+    
+
+  	<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+	    <app-menu-admin></app-menu-admin>
+	</nav>
+
+
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
+
+
+
+      <div class="header_admin">
+
+      	<div class="row">
+
+      		<div class="col-md-12">
+
+      			<h2><i class="fa fa-undo" aria-hidden="true"></i> Nueva Convocatoria</h2>
+
+
+
+      		</div>
+      		
+
+
+      	</div>	
+
+      </div>
+
+      <div class="main_admin">
+
+      	<form>
+
+	      	<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="nombre">Nombre</label>
+					<input id="nombre" type="text" formControlName="nombre" placeholder="Nombre de la Convocatoria" required>
+				</div>
+
+				<div class="col-md-6">
+					<label for="producto">Producto</label>
+					<input id="producto" type="text" formControlName="producto" value="Bata manga larga antifluído" required>
+				</div>
+
+			</div>
+
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="nombre">Fecha de finalizacion</label>
+					<div class="row">
+						<div class="col-md-4">
+							<select formControlName="dia">
+						    	<option>Día</option>
+						    </select>
+						</div>
+						<div class="col-md-4">
+							<select formControlName="mes">
+						    	<option>Mes</option>
+						    </select>
+						</div>
+						<div class="col-md-4">
+							<select formControlName="ano">
+						    	<option>Año</option>
+						    </select>
+						</div>	
+					</div>	
+				</div>
+
+				<div class="col-md-6">
+					<label for="tipo">Tipo de contrato</label>
+					<input id="tipo" type="text" formControlName="tipo" value="Ordinario" required>
+				</div>
+
+			</div>	
+
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="nombre">Forma de pago</label>
+					<select formControlName="forma">
+						   <option>Cheque</option>
+					</select>
+				</div>
+
+				<div class="col-md-6">
+					<label for="nombre">Plazo de ejecución</label>
+					<div class="row">
+						<div class="col-md-4">
+							<select formControlName="dia">
+						    	<option>Día</option>
+						    </select>
+						</div>
+						<div class="col-md-4">
+							<select formControlName="mes">
+						    	<option>Mes</option>
+						    </select>
+						</div>
+						<div class="col-md-4">
+							<select formControlName="ano">
+						    	<option>Año</option>
+						    </select>
+						</div>	
+					</div>	
+				</div>
+
+			</div>
+
+
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="periodo">Periodo de entrega</label>
+					<select formControlName="periodo">
+						   <option>Anticipado</option>
+					</select>
+				</div>
+
+				<div class="col-md-4">
+					<label for="riezgo">Riezgo a asegurar</label>
+					<select formControlName="riezgo">
+						   <option>No</option>
+					</select>
+				</div>
+
+			</div>
+
+
+
+
+	    </form>
+
+      </div>	
+
+
+    </main>
+  </div>
+</div>
+
+
