@@ -10,6 +10,8 @@ import { RegistrosAdminComponent } from './registros-admin/registros-admin.compo
 import { EmpresasAdminComponent } from './empresas-admin/empresas-admin.component';
 import { ConvocatoriasAdminComponent } from './convocatorias-admin/convocatorias-admin.component';
 import { ConvocatoriasDetalleAdminComponent } from './convocatorias-detalle-admin/convocatorias-detalle-admin.component';
+import { ActualizarDatosAdminComponent } from './actualizar-datos-admin/actualizar-datos-admin.component';
+import { UsuarioConvocatoriasAdminComponent } from './usuario-convocatorias-admin/usuario-convocatorias-admin.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
   { path: 'admin/registros', component: RegistrosAdminComponent },
   { path: 'admin/empresas', component: EmpresasAdminComponent },
   { path: 'admin/convocatorias', component: ConvocatoriasAdminComponent },
-  { path: 'admin/convocatorias/crear', component: ConvocatoriasDetalleAdminComponent }
+  { path: 'admin/convocatorias/crear', component: ConvocatoriasDetalleAdminComponent },
+  { path: 'admin/convocatorias/usuarios', component: UsuarioConvocatoriasAdminComponent },
+  { path: 'admin/usuario', component:  ActualizarDatosAdminComponent }
 ];
 
 @NgModule({

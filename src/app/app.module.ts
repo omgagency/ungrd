@@ -18,6 +18,7 @@ import { EmpresasAdminComponent } from './empresas-admin/empresas-admin.componen
 import { ConvocatoriasAdminComponent } from './convocatorias-admin/convocatorias-admin.component';
 import { ConvocatoriasDetalleAdminComponent } from './convocatorias-detalle-admin/convocatorias-detalle-admin.component';
 import { ActualizarDatosAdminComponent } from './actualizar-datos-admin/actualizar-datos-admin.component';
+import { UsuarioConvocatoriasAdminComponent } from './usuario-convocatorias-admin/usuario-convocatorias-admin.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ActualizarDatosAdminComponent } from './actualizar-datos-admin/actualiz
     EmpresasAdminComponent,
     ConvocatoriasAdminComponent,
     ConvocatoriasDetalleAdminComponent,
-    ActualizarDatosAdminComponent
+    ActualizarDatosAdminComponent,
+    UsuarioConvocatoriasAdminComponent
   ],
   imports: [
     BrowserModule,

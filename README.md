@@ -2,15 +2,20 @@
 Se encuentra el proyecto en angular 9 y bootstrap 4 <br>
 Esta son las rutas del proyecto <br><br>
 
-{ path: '', component: HomeComponent }, <br>
-{ path: 'registro1', component: Registro1Component },  <br>
-{ path: 'registro2', component: Registro2Component },  <br>
-{ path: 'registro3', component: Registro3Component },  <br>
-{ path: 'registro4', component: Registro4Component },  <br>
-{ path: 'admin', component: LoginComponent },  <br>
-{ path: 'admin/registros', component: RegistrosAdminComponent },  <br>
-{ path: 'admin/empresas', component: EmpresasAdminComponent },  <br>
-{ path: 'admin/convocatorias', component: ConvocatoriasAdminComponent }  <br><br>
+const routes: Routes = [<br>
+  { path: '', component: HomeComponent },<br>
+  { path: 'registro1', component: Registro1Component },<br>
+  { path: 'registro2', component: Registro2Component },<br>
+  { path: 'registro3', component: Registro3Component },<br>
+  { path: 'registro4', component: Registro4Component },<br>
+  { path: 'admin', component: LoginComponent },<br>
+  { path: 'admin/registros', component: RegistrosAdminComponent },<br>
+  { path: 'admin/empresas', component: EmpresasAdminComponent },<br>
+  { path: 'admin/convocatorias', component: ConvocatoriasAdminComponent },<br>
+  { path: 'admin/convocatorias/crear', component: ConvocatoriasDetalleAdminComponent },<br>
+  { path: 'admin/convocatorias/usuarios', component: UsuarioConvocatoriasAdminComponent },<br>
+  { path: 'admin/usuario', component:  ActualizarDatosAdminComponent }<br>
+];<br><br>
 
 
 Corre el comando ng serve<br>

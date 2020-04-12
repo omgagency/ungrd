@@ -1,1 +1,194 @@
-<p>actualizar-datos-admin works!</p>
+<app-header-admin></app-header-admin>
+
+<div class="container-fluid">
+  <div class="row">
+    
+
+  	<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+	    <app-menu-admin></app-menu-admin>
+	</nav>
+
+
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
+
+
+
+      <div class="header_admin">
+
+      	<div class="row">
+
+      		<div class="col-md-12">
+
+      			<h2>Datos empresa</h2>
+
+
+
+      		</div>
+      		
+
+
+      	</div>	
+
+      </div>
+
+      <div class="main_admin">
+
+      	<form>
+
+	      	<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="nombre">Nombre</label>
+					<input id="nombre" type="text" formControlName="nombre" placeholder="Nombre de la empresa" required>
+				</div>
+
+				<div class="col-md-6">
+					<label for="archivo">Certificado de matrícula mercantil vigente al 2020 </label>
+					<input type="file" formControlName="archivo">
+				</div>
+
+
+			</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="telefono">Teléfono</label>
+					<input  type="text" formControlName="telefono" placeholder="Teléfono de la empresa" required>
+				</div>
+
+				<div class="col-md-6">
+					<label for="archivo2">Fotocopia de la cédula representante legal de la empresa </label>
+					<input type="file" formControlName="archivo2">
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="rut">RUT</label>
+					<input  type="text" formControlName="rut" placeholder="RUT de la empresa" required>
+				</div>
+
+				<div class="col-md-6">
+					<label for="archivo3">Certificado de pago parafiscal </label>
+					<input type="file" formControlName="archivo3">
+				</div>
+
+			</div>
+
+			<div class="row titulo_form">
+
+		      		<div class="col-md-12">
+
+		      			<h2>Datos producto</h2>
+
+
+
+		      		</div>
+		      		
+
+
+		      	</div>
+
+
+
+		     <div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="producto">Producto</label>
+					<select formControlName="producto">
+				    	<option>Bata manga larga antifluído</option>
+				    </select>
+				</div>
+
+				<div class="col-md-3">
+					<label for="cantidad">Cantidad </label>
+					<input  type="text" formControlName="cantidad" placeholder="Cantidad total" required>
+				</div>
+
+				<div class="col-md-3">
+					<label for="lote">Lote</label>
+					<input  type="text" formControlName="lote" placeholder="Código del lote" required>
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="fabricante">Nombre del fabricante</label>
+					<input  type="text" formControlName="fabricante" placeholder="Nombre del fabricante del producto" required>
+				</div>
+
+				
+
+				<div class="col-md-6">
+					<label for="telefono">Teléfono</label>
+					<input  type="text" formControlName="telefono" placeholder="Teléfono del fabricante del producto" required>
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="archivo5">Registro INVIMA o "Autoevaluación INVIMA" </label>
+					<input type="file" formControlName="archivo5">
+					
+				</div>
+				<div class="col-md-6">
+					<label for="archivo6">Ficha de técnica del producto </label>
+					<input type="file" formControlName="archivo6">
+					
+				</div>
+
+				
+
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-6">
+					<label for="archivo7">Certificado de instituciones </label>
+					<input type="file" formControlName="archivo7">
+					
+				</div>
+
+			</div>
+	
+
+			
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<button class="button btn_guardar">Guardar</button>
+				</div>
+
+				
+
+			</div>
+
+
+
+
+	    </form>
+
+      </div>	
+
+
+    </main>
+  </div>
+</div>
+
+
