@@ -1,0 +1,36 @@
+:host {
+    width: 100%;
+}
+
+.bg2 {
+    background: url("/assets/imgs/landing.png") center right no-repeat;
+    background-size: 50%;
+    height: 100%;
+
+    > .container {
+        height: 100%;
+    }
+}
+
+.link_productos{
+	position: absolute;
+	right:0px;
+	bottom: 0px;
+	left: 50%;
+	text-indent: -999em;
+	cursor: pointer;
+	top: 0px
+}
+
+@media (max-width: 767.98px) {
+	.bg2{
+		background-image: none;
+		padding-top: 0px;
+	}
+
+	.link_productos{
+		display: none;
+	}
+
+}
+	

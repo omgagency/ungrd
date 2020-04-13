@@ -1,0 +1,18 @@
+.intro {
+    min-height: 100vh;
+
+    color: white;
+    font-family: "WorkSans";
+    display: flex;
+    flex-direction: column;
+    .header {
+        height: 50vh;
+        background: white;
+    }
+
+    .content {
+        height: 50vh;
+        background: url("/assets/imgs/bg.png") no-repeat;
+        background-size: cover;
+    }
+}

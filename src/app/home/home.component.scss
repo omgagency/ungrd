@@ -1,0 +1,48 @@
+.intro {
+    min-height: 100vh;
+    background: url("/assets/imgs/bg.png") no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: "WorkSans";
+    display: flex;
+    flex-direction: column;
+
+    .header {
+        background: white;
+        color: #212b55;
+        flex: 0 1 auto;
+
+        nav.navbar {
+            li {
+                a {
+                    &.featured {
+                        border: 1px solid;
+                    }
+
+                    &:hover {
+                        //  color: #fed100;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            li,
+            a {
+                cursor: pointer;
+                color: #212b55;
+                &:focus {
+                    outline: 0;
+                }
+
+                &.active {
+                    //  color: #fed100;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .content {
+        flex: 1 1 auto;
+    }
+}

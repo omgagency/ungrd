@@ -1,0 +1,84 @@
+<form>
+    <div class="form-row pb-3">
+        <div class="col-md-4">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <fa-icon [icon]="faSearch"></fa-icon>
+                    </span>
+                </div>
+                <input class="form-control mr-sm-2" type="search" [ngModelOptions]="{standalone: true}"
+                    [(ngModel)]="service.searchTerm" placeholder="Buscar" aria-label="Search">
+            </div>
+            <span class="ml-3" *ngIf="service.loading$ | async">Cargando...</span>
+        </div>
+        <div class="col d-flex">
+            <ngb-pagination class="ml-auto mr-5" [collectionSize]="(total$ | async)!" [(page)]="service.page"
+                [pageSize]="service.pageSize">
+            </ngb-pagination>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" sortable="nombre" (sort)="onSort($event)">Empresa</th>
+                <th scope="col" sortable="ciudad" (sort)="onSort($event)">Ciudad</th>
+                <th scope="col">Fecha</th>
+                <th scope="col" sortable="producto" (sort)="onSort($event)">Producto</th>
+                <th scope="col" sortable="cantidad" (sort)="onSort($event)">Cantidad</th>
+                <th style="width: 20%" scope="col">Acciones</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="form-control" type="search" placeholder="Empresa" aria-label="Search">
+                </td>
+                <td>
+                    <input class="form-control" type="search" placeholder="Ciudad" aria-label="Search">
+                </td>
+                <td> <input class="form-control" type="search" placeholder="Fecha" aria-label="Search">
+                </td>
+                <td> <input class="form-control" type="search" placeholder="Producto" aria-label="Search">
+                </td>
+                <td> <input class="form-control" type="search" placeholder="Cantidad" aria-label="Search">
+                </td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let empresa of empresas$ | async">
+                <th scope="row">{{ empresa.id }}</th>
+                <td>
+                    <ngb-highlight [result]="empresa.nombre" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="empresa.ciudad" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    {{empresa.fecha}}
+                </td>
+                <td>
+                    <ngb-highlight [result]="empresa.producto" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="empresa.cantidad | number" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <button class="btn">
+                        <fa-icon [icon]="faEye"></fa-icon>
+                    </button>
+                    <button class="btn btn-outline-success border-0">
+                        <fa-icon [icon]="faCheck"></fa-icon>
+                    </button>
+                    <button class="btn  btn-outline-danger border-0">
+                        <fa-icon [icon]="faTimes"></fa-icon>
+                    </button>
+                    <button class="btn">
+                        <fa-icon [icon]="faSearch"></fa-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

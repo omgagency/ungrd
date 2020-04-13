@@ -1,0 +1,47 @@
+@import './theme/variables';
+@import "~bootstrap/scss/bootstrap.scss";
+@import './theme/forms';
+
+.btn-primary{
+	background: #439aff;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 7px 20px;
+		border: 0px;
+		border-bottom: 3px solid #115eb7;
+		width: 200px;
+		border-radius: 10px;
+		line-height: 20px;
+		text-transform: uppercase;
+		height: 55px;
+}
+
+.btn-success{
+	
+	background: #1bdb68;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 7px 20px;
+		border: 0px;
+		border-bottom: 3px solid #079f44;
+		max-width: 200px;
+		width: 100%;
+		border-radius: 10px;
+		line-height: 20px;
+		text-transform: uppercase;
+		height: 55px;
+}
+
+.header {
+    z-index: 1000;
+}
+
+
+
+@media (max-width: 767.98px) {
+	.divisor_top{
+		display: none;
+		
+	}
+
+}

@@ -1,0 +1,171 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h5 class="font-weight-lighter pt-3 mb-n2">Formulario de</h5>
+      <h1 class="font-weight-bold mb-4">Registro</h1>
+    </div>
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="save(registerForm)" novalidate autocomplete="off">
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="tipoProveedor">Tipo de Proveedor</label>
+        <select (change)="onChange($event.target.value)" class="form-control" formControlName="tipoProveedor"
+          placeholder="Escoja el tipo de proveedor">
+          <option *ngFor="let proveedor of proveedores">{{proveedor}}</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-6">
+          <br>
+
+          <div id="info1">Persona Natural o Jurídica registrada en el país y/o con representación legal en Colombia.</div>
+          <div id="info2">Persona Natural o Jurídica que no cuenta con registro o representación legal en el país.</div>
+
+      </div>  
+
+    </div>
+    <div class="border-top mt-2 mb-4"></div>
+    <div class="form-row">
+      <div class="col-md-12">
+        <h6 class="font-weight-normal">Datos de la Empresa</h6>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre de la empresa">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="certificado">Certificado de existencia y
+representación Legal o Registro mercantil</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" formControlName="mercantilFile" id="mercantilFile"
+            (change)="onFileChange($event.target.files,0)" lang="es">
+          <label class="custom-file-label" #labelUpload for="mercantilFile">Seleccionar Archivo ...</label>
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <label for="nombrecontacto">Nombre del contacto</label>
+        <input type="text" class="form-control" formControlName="nombrecontacto" placeholder="Nombre del contacto">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" class="form-control" formControlName="telefono" placeholder="Teléfono del contacto.">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="E-mail del contacto">
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <label>Copia del documento de identidad del representante legal</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="fotocopiaFile" formControlName="fotocopiaFile"
+            (change)="onFileChange($event.target.files,1)">
+          <label class="custom-file-label" #labelUpload for="fotocopiaFile">Seleccionar Archivo...</label>
+        </div>
+      </div>
+
+
+      <div *ngIf="registerForm.get('ciudadEntrega').enabled" class="form-group col-md-6">
+        <label for="ciudadEntrega">Ciudad de entrega</label>
+        <select (change)="onChange($event.target.value)" class="form-control" formControlName="ciudadEntrega"
+          placeholder="">
+         <option>Escoja la ciudad de entrega</option>
+          <option *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+        </select>
+      </div>
+
+      <div *ngIf="registerForm.get('paisOrigen').enabled" class="form-group col-md-6">
+        <label for="paisOrigen">Pais de origen</label>
+        <input type="text" class="form-control" formControlName="paisOrigen" placeholder="Pais de origen">
+      </div>
+
+      <div *ngIf="registerForm.get('rutFile').enabled" class="form-group col-md-6">
+        <label for="rutFile">RUT</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="rutFile" formControlName="rutFile"
+            (change)="onFileChange($event.target.files,2)">
+          <label class="custom-file-label" #labelUpload for="parafiscalFile">Seleccionar Archivo...</label>
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>RUP o estados financieros del último año (2019)</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="rupFile" formControlName="rupFile"
+            (change)="onFileChange($event.target.files,3)">
+          <label class="custom-file-label" #labelUpload for="rupFile">Seleccionar Archivo...</label>
+        </div>
+      </div>
+
+      <div *ngIf="registerForm.get('parafiscalFile').enabled" class="form-group col-md-6">
+        <label>Certificado de pago parafiscal</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="parafiscalFile" formControlName="parafiscalFile"
+            (change)="onFileChange($event.target.files,4)">
+          <label class="custom-file-label" #labelUpload for="parafiscalFile">Seleccionar Archivo...</label>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="border-top border-2 mt-2 mb-4"></div>
+    <div class="form-row">
+      <div class="col-md-12">
+        <h6 class="font-weight-normal">Datos producto</h6>
+
+        Usted puede inscribirse como proveedor para la adquisición de uno o
+todos los elementos de la lista.
+      </div>
+    </div>
+
+    <div class="form-row productos mb-4" *ngFor="let producto of productos.controls;let i =  index">
+      <ng-container [formGroup]="producto">
+        <div *ngIf="productos.controls.length > 1" class="col-sm-12 text-right">
+          <button type="button" class="btn btn-danger" (click)="delete(i)">
+            Quitar
+          </button>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="label">Tipo de producto</label>
+              <select class="form-control" formControlName="producto" placeholder="Seleccione el Producto">
+                <option *ngFor="let producto of listaProductos">{{producto}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="label">Cantidad</label>
+              <input type="number" class="form-control" formControlName="cantidad" placeholder="Cantidad disponible inmediata.">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label class="label">Cantidad semanal</label>
+              <input type="text" class="form-control" formControlName="lote" placeholder="Cantidad disponible semanal.">
+            </div>
+          </div>
+
+
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="row" class="action-buttons-group pb-4">
+      <button type="button" class="btn btn-primary btn-lg" (click)="addProducto()">Agregar
+        Producto</button>
+      <button type="submit" class="btn btn-success btn-lg form-submit-button">Enviar</button>
+    </div>
+
+  </form>
+
+</div>

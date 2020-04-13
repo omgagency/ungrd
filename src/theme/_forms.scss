@@ -1,0 +1,41 @@
+form {
+  .ng-dirty.ng-invalid,
+  .ng-dirty.ng-invalid > button.select-button,
+  .ng-dirty.ng-invalid + .custom-file-label {
+    background-color: #f7f9fc;
+    border-width: 2px;
+    border-color: #ff3d71;
+    color: #222b45;
+  }
+
+  .ng-dirty.ng-valid,
+  .ng-dirty.ng-valid > button.select-button,
+  .ng-dirty.ng-valid + .custom-file-label {
+    background-color: #f7f9fc;
+    border-width: 2px;
+    border-color: #00d68f;
+    color: #222b45;
+  }
+}
+
+.action-buttons-group {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.4em;
+  color: #555;
+}
+
+.form-submit-button {
+  width: 150px;
+  margin-left: 20px;
+}
+
+.form-cancel-button {
+  width: 150px;
+}

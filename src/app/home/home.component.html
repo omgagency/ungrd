@@ -1,39 +1,40 @@
-<app-top></app-top>
+<div class="intro">
+    <div class="header">
+        <div class="container pt-4 pb-4">
+            <nav class="navbar navbar-expand-lg justify-content-between">
+                <a class="navbar-brand" routerLink="/">
+                    <img src="assets/imgs/logo-gobierno.png" height="50" class="d-inline-block align-middle" alt="">
+                </a>
 
-<div class="home_main">
+                <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+                <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+                    &#9776;
+                </button>
 
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col-md-5">
-				<h2>Convocatoria<br>
-				<span>Nacional</span></h2>
-
-				ElGobierno Nacional a través de la Unidad Nacional de Gestión de Riegos y Desastres (UNGRD) está contratando proveedores para la adquisición de un gran volumen de 9 elementos prioritarios de protección (EPP) médica identificadas previamente.<br><br>
-
-				<a  routerLink="/registro1" class="btn btn_registro" href>
-					Registrate
-				</a>	
-
-
-
-			</div>
-			<div class="col-md-7">
-
-
-				<img src="/assets/images/home.png" class="img-fluid d-sm-none">
-
-				
-
-			</div>
-
-		</div>	
-
-
-	</div>
-
+                <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+                <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse col-md-6">
+                    <ul class="navbar-nav ml-auto nav-fill w-100">
+                        <li (click)="isMenuCollapsed = true" class="nav-item">
+                            <a class="nav-link" href="assets/pdf/ABC COMPRA COVID-19.pdf"
+                                target="_blank">Términos de la convocatoria.</a>
+                        </li>
+                        <li routerLink="/registro" routerLinkActive="active" (click)="isMenuCollapsed = true"
+                            class="nav-item">
+                            <a class="nav-link">Registro</a>
+                        </li>
+                        <li class="nav-item pl-2 pr-2 divisor_top">
+                            <span class="nav-link">|</span>
+                        </li>
+                        <li routerLink="/login" routerLinkActive="active" class="nav-item"
+                            (click)="isMenuCollapsed = true">
+                            <a class="nav-link featured">Ingreso</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row no-gutters content">
+        <router-outlet></router-outlet>
+    </div>
 </div>
-
-<app-footer></app-footer>
-

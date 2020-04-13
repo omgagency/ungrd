@@ -1,0 +1,26 @@
+:host {
+  width: 100%;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.16);
+  padding: 30px;
+
+  .border-2 {
+    border-width: 1.5px !important;
+  }
+
+  .productos {
+    border-bottom: 1px solid;
+    // border-radius: 1rem;
+    padding: 1rem;
+  }
+
+  #info2{
+  display: none;
+  }
+
+
+
+}
