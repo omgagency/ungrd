@@ -44,6 +44,9 @@ export class ConvocatoriasComponent implements OnInit {
     this.service.sortDirection = direction;
   }
 
+
+  
+
   ngOnInit(): void {
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
-import { faSearch, faEye, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faEye, faCheck, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Empresa } from 'src/app/core/empresas/empresa';
 import { Observable } from 'rxjs';
 import { NgbdSortableHeader, SortEvent } from 'src/app/core/sortable.directive';
@@ -12,10 +12,11 @@ import { EmpresasService } from 'src/app/core/empresas/empresas.service';
 })
 export class RegistroComponent implements OnInit {
 
-  faSearch = faSearch;
+  faEnvelope = faEnvelope;
   faEye = faEye;
   faCheck = faCheck;
   faTimes = faTimes;
+  faSearch = faSearch;
 
   empresas$: Observable<Empresa[]>;
   total$: Observable<number>;

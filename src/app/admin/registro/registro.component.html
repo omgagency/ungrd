@@ -1,5 +1,5 @@
 <form>
-    <div class="form-row pb-3">
+    <div class="form-row pb-3 header-search">
         <div class="col-md-4">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -65,18 +65,16 @@
                     <ngb-highlight [result]="empresa.cantidad | number" [term]="service.searchTerm"></ngb-highlight>
                 </td>
                 <td>
-                    <button class="btn">
-                        <fa-icon [icon]="faEye"></fa-icon>
-                    </button>
+                    
                     <button class="btn btn-outline-success border-0">
                         <fa-icon [icon]="faCheck"></fa-icon>
                     </button>
                     <button class="btn  btn-outline-danger border-0">
                         <fa-icon [icon]="faTimes"></fa-icon>
                     </button>
-                    <button class="btn">
-                        <fa-icon [icon]="faSearch"></fa-icon>
-                    </button>
+                    <a routerLink="mailto:{{ empresa.email }}" class="btn">
+                        <fa-icon [icon]="faEnvelope"></fa-icon>
+                    </a>
                 </td>
             </tr>
         </tbody>

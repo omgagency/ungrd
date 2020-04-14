@@ -1,19 +1,23 @@
 <div class="admin">
     <div class="header">
-        <nav class="navbar navbar-expand-md mb-3">
-            <div class="container-fluid">
-                <a href="#" class="navbar-brand mr-3">
-                    <img src="assets/imgs/logo.png" height="50" class="d-inline-block align-middle" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-                    &#9776;
-                </button>
-                <div class="navbar-nav ml-auto">
-                    <a routerLink="/" class="nav-item nav-link">Salir</a>
-                </div>
-            </div>
-        </nav>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white top_admin">
+  <h1 class="my-0 mr-md-auto font-weight-normal"><img class="img-fluid" src="assets/imgs/logo-gobierno.png"></h1>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <img src="/assets/imgs/user.png" class="img-fluid img-user">
+    <a href="#">
+        Manuel Torres
+        <br>28/05/2016 12:25 PM
+
+    </a>
+  </nav>
+  <a class="btn btn_salir" routerLink="/"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a>
+</div>
     </div>
+
+    
+
+
+
     <div class="row no-gutters content">
         <div class="col-md-2 menu">
 

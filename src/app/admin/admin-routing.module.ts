@@ -4,6 +4,11 @@ import { AdminComponent } from './admin.component';
 import { RegistroComponent } from './registro/registro.component';
 import { EmpresasComponent } from './empresas/empresas.component';
 import { ConvocatoriasComponent } from './convocatorias/convocatorias.component';
+import { ConvocatoriasDetalleAdminComponent } from './convocatorias-detalle-admin/convocatorias-detalle-admin.component';
+import { EmpresasDetalleAdminComponent } from './empresas-detalle-admin/empresas-detalle-admin.component';
+import { ConvocatoriasAplicarAdminComponent } from './convocatorias-aplicar-admin/convocatorias-aplicar-admin.component';
+
+
 
 
 const routes: Routes = [
@@ -20,8 +25,20 @@ const routes: Routes = [
         component: EmpresasComponent
       },
       {
+        path: 'empresas/detalle',
+        component: EmpresasDetalleAdminComponent
+      },
+      {
         path: 'convocatorias',
         component: ConvocatoriasComponent
+      },
+       {
+        path: 'convocatorias/crear',
+        component: ConvocatoriasDetalleAdminComponent
+      },
+       {
+        path: 'convocatorias/aplicar',
+        component: ConvocatoriasAplicarAdminComponent
       },
       {
         path: '',

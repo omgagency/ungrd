@@ -1,0 +1,113 @@
+
+
+      <div class="header_admin">
+			<div class="row">
+
+      		<div class="col-md-12">
+
+      			<h2>Nueva Convocatoria</h2>
+
+
+      		</div>
+      		
+
+      	</div>	
+
+      </div>
+
+      <div class="main_admin">
+
+
+
+
+
+      	<form [formGroup]="empresaForm" (ngSubmit)="save(empresaForm)" novalidate autocomplete="off">
+
+	      	<div class="row">
+
+				
+				<div class="col-md-6 form-group">
+					<label for="nombre">Nombre</label>
+					<input id="nombre" type="text" formControlName="nombre" class="form-control" value="">
+				</div>
+
+				<div class="col-md-6 form-group">
+					<label for="ciudad">Ciudad</label>
+					<input id="ciudad" type="text" formControlName="ciudad" class="form-control" value="">
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6 form-group">
+					<label for="fecha">Fecha</label>
+					<input id="fecha" type="text" formControlName="fecha" class="form-control" value="">
+				</div>
+
+				<div class="col-md-6 form-group">
+					<label for="producto">Producto</label>
+					<input id="producto" type="text" formControlName="producto" class="form-control" value="">
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6 form-group">
+					<label for="cantidad">Cantidad</label>
+					<input id="cantidad" type="text" formControlName="cantidad" class="form-control" value="">
+				</div>
+
+				<div class="col-md-6 form-group">
+					<label for="correo">Producto</label>
+					<input id="correo" type="text" formControlName="correo" class="form-control" value="">
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6 form-group">
+					<label for="telefono">Telefono</label>
+					<input id="telefono" type="text" formControlName="telefono" class="form-control" value="">
+				</div>
+
+				<div class="col-md-6 form-group">
+					<label for="contacto">Contacto</label>
+					<input id="contacto" type="text" formControlName="contacto" class="form-control" value="">
+				</div>
+
+			</div>
+
+
+
+
+
+			
+
+			
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<button type="submit" class="btn btn-success btn-lg form-submit-button btn_guardar">Enviar</button>
+				</div>
+
+				
+
+			</div>
+
+
+
+
+	    </form>
+
+	
+
+      </div>	
+

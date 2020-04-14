@@ -50,11 +50,6 @@ $custom-file-text: (
 }
 
 
-
-
-
-
-
 @media (max-width: 767.98px) {
 	.divisor_top{
 		display: none;
@@ -62,3 +57,10 @@ $custom-file-text: (
 	}
 
 }
+
+input.ng-dirty.ng-invalid {
+
+	border: 2px solid #ff3d71 !important;
+	color: #222b45;
+}
+	
