@@ -63,4 +63,17 @@ input.ng-dirty.ng-invalid {
 	border: 2px solid #ff3d71 !important;
 	color: #222b45;
 }
+
+button.close {
+    color: #e21b1b;
+    opacity: 1;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+button.btn.btn-outline-dark {
+    margin: 0 auto;
+}
 	
