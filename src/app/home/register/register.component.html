@@ -39,7 +39,7 @@
       </div>
 
       <div class="form-group col-md-6">
-        <label for="certificado">Certificado de existencia y
+        <label id="certificado-text" for="certificado">Certificado de existencia y
 representación Legal o Registro mercantil</label>
         <div class="custom-file">
           <input type="file" class="custom-file-input" formControlName="mercantilFile" id="mercantilFile"
@@ -55,13 +55,13 @@ representación Legal o Registro mercantil</label>
       </div>
 
       <div class="form-group col-md-6">
-        <label for="telefono">Teléfono</label>
-        <input type="tel" class="form-control" formControlName="telefono" placeholder="Teléfono del contacto.">
+        <label for="telefono">Teléfono del contacto</label>
+        <input type="tel" class="form-control" formControlName="telefono" placeholder="Teléfono del contacto">
       </div>
 
       <div class="form-group col-md-6">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" formControlName="email" placeholder="E-mail del contacto">
+        <label for="email">E-mail del contacto</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Email del contacto">
       </div>
 
 
@@ -76,11 +76,10 @@ representación Legal o Registro mercantil</label>
 
 
       <div *ngIf="registerForm.get('ciudadEntrega').enabled" class="form-group col-md-6">
-        <label for="ciudadEntrega">Ciudad de entrega</label>
+        <label for="ciudadEntrega">Domicilio Principal</label><br>
         <select (change)="onChange($event.target.value)" class="form-control" formControlName="ciudadEntrega"
-          placeholder="">
-         <option>Escoja la ciudad de entrega</option>
-          <option *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+          placeholder="Escoja la ciudad">
+          <option *ngFor="let ciudad of ciudades_orden">{{ciudad}}</option>
         </select>
       </div>
 
@@ -99,7 +98,7 @@ representación Legal o Registro mercantil</label>
       </div>
 
       <div class="form-group col-md-6">
-        <label>RUP o estados financieros del último año (2019)</label>
+        <label id="rup-text">RUP o estados financieros del último año (2019)</label>
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="rupFile" formControlName="rupFile"
             (change)="onFileChange($event.target.files,3)">
@@ -115,8 +114,6 @@ representación Legal o Registro mercantil</label>
           <label class="custom-file-label" #labelUpload for="parafiscalFile">Seleccionar Archivo...</label>
         </div>
       </div>
-
-
 
     </div>
     <div class="border-top border-2 mt-2 mb-4"></div>
@@ -145,19 +142,31 @@ todos los elementos de la lista.
               </select>
             </div>
             <div class="form-group col-md-3">
-              <label class="label">Cantidad</label>
-              <input type="number" class="form-control" formControlName="cantidad" placeholder="Cantidad disponible inmediata.">
+              <label class="label">Cantidad disponible inmediata</label>
+              <input type="text" class="form-control" formControlName="cantidad" placeholder="Escriba la cantidad.">
             </div>
 
             <div class="form-group col-md-3">
-              <label class="label">Cantidad semanal</label>
-              <input type="text" class="form-control" formControlName="lote" placeholder="Cantidad disponible semanal.">
+              <label class="label">Cantidad disponible semanal</label>
+              <input type="text" class="form-control" formControlName="lote" placeholder="Escriba la cantidad.">
             </div>
           </div>
 
 
         </div>
       </ng-container>
+    </div>
+
+
+    <div class="form-row">
+      <div class="col-md-12">
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="acepto">
+          <label class="form-check-label" for="acepto"> Acepto <a href="https://dapre.presidencia.gov.co/dapre/politica-privacidad-condiciones-uso?utm_source=mailing&utm_medium=email&utm_campaign=presidencia&utm_content=campa%C3%B1a_mailing_educacion&utm_term=Link_Condiciones_Legales" target="_blank">Politica de Tratamiento de datos</a></label>
+        </div>
+       
+      </div>
     </div>
 
     <div class="row" class="action-buttons-group pb-4">
@@ -168,4 +177,8 @@ todos los elementos de la lista.
 
   </form>
 
+  
+
 </div>
+
+

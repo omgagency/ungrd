@@ -14,6 +14,10 @@
                 <!-- Step 2: Add the ngbCollapse directive to the element below. -->
                 <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse col-md-6">
                     <ul class="navbar-nav ml-auto nav-fill w-100">
+                        <li routerLink="" (click)="isMenuCollapsed = true"
+                            class="nav-item">
+                            <a class="nav-link">Inicio</a>
+                        </li>
                         <li (click)="isMenuCollapsed = true" class="nav-item">
                             <a class="nav-link" href="assets/pdf/ABC COMPRA COVID-19.pdf"
                                 target="_blank">Términos de la convocatoria.</a>
@@ -36,5 +40,6 @@
     </div>
     <div class="row no-gutters content">
         <router-outlet></router-outlet>
+        <app-modal></app-modal>
     </div>
 </div>

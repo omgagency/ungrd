@@ -8,10 +8,11 @@ import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, LandingComponent, RegisterComponent, LoginComponent],
+  declarations: [HomeComponent, LandingComponent, RegisterComponent, LoginComponent, ModalComponent],
   imports: [
     CommonModule,
     NgbModule,
