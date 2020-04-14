@@ -4,8 +4,8 @@ export interface Empresa {
     ciudad: string;
     fecha: string;
     producto: string;
-    cantidad: number;
+    cantidad: string;
     correo: string;
-    telefono: number;
+    telefono: string;
     contacto: string;
 }

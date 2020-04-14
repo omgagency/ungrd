@@ -3,6 +3,18 @@
 }
 
 
+@import "../../../../node_modules/bootstrap/scss/functions";
+
+
+$custom-file-text: (
+  en: "Agregar Archivo",
+  es: "Agregar Archivo"
+);
+
+
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+
 
 
 .container {

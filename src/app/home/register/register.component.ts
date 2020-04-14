@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   @ViewChildren('labelUploadPr') labelUploadPr: QueryList<ElementRef>;
 
-  registerForm: FormGroup;
+  public registerForm: FormGroup;
 
   proveedores = [
     'Proveedor Nacional',
@@ -1170,6 +1170,11 @@ export class RegisterComponent implements OnInit {
 
   get productos(): FormArray { return this.registerForm.get('productos') as FormArray; }
 
+  clearInput(file){
+        
+       
+}
+
 
   addProducto() {
     this.productos.push(this.createProducto());
@@ -1186,6 +1191,9 @@ export class RegisterComponent implements OnInit {
   delete(i) {
     this.productos.removeAt(i);
   }
+
+
+     
 
   save(form) {
 
@@ -1222,18 +1230,32 @@ export class RegisterComponent implements OnInit {
     }
 
 
-
-
   }
 
   markElements(controls) {
+
+    var conta = 0;
+
     for (const key in controls) {
+
+        conta++;
+
+
+
+
       if (controls.hasOwnProperty(key)) {
+
+
         const element = controls[key];
         if (element.controls) {
           this.markElements(element.controls)
         }
         element.markAsDirty();
+
+        if(conta == 3){
+            var Forename = document.getElementById(key);
+            Forename.focus();
+        }
         
       }
     }
