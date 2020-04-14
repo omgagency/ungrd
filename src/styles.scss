@@ -2,6 +2,19 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import './theme/forms';
 
+@import "../node_modules/bootstrap/scss/functions";
+
+
+$custom-file-text: (
+  en: "Agregar Archivo",
+  es: "Agregar Archivo"
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
 .btn-primary{
 	background: #439aff;
 		color: #fff;
@@ -36,17 +49,6 @@
     z-index: 1000;
 }
 
-
-@import "../node_modules/bootstrap/scss/functions";
-
-
-$custom-file-text: (
-  en: "Agregar Archivo",
-  es: "Agregar Archivo"
-);
-
-
-@import "../node_modules/bootstrap/scss/bootstrap";
 
 
 
