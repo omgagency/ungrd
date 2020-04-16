@@ -1,0 +1,159 @@
+
+
+      <div class="header_admin">
+			<div class="row">
+
+      		<div class="col-md-12">
+
+      			<h2>Nueva Convocatoria</h2>
+
+
+      		</div>
+      		
+
+      	</div>	
+
+      </div>
+
+      <div class="main_admin">
+
+      	<form [formGroup]="convocatoriaForm" (ngSubmit)="save(convocatoriaForm)" novalidate autocomplete="off">
+
+	      	<div class="row">
+
+				
+				<div class="col-md-6 form-group">
+					<label for="nombre">Nombre</label>
+					<input id="nombre" type="text" formControlName="nombre" class="form-control" placeholder="Nombre de la Convocatoria">
+				</div>
+
+				<div class="col-md-6 form-group">
+					<label for="producto">Producto</label>
+					<input id="producto" type="text" formControlName="producto" value="Bata manga larga antifluído">
+				</div>
+
+			</div>
+
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<label for="nombre">Fecha de finalizacion</label>
+					<div class="row">
+						<div class="col-md-4 form-group">
+							<select formControlName="diaFinalizacion">
+						    	<option>Día</option>
+						    </select>
+						</div>
+						<div class="col-md-4 form-group">
+							<select formControlName="mesFinalizacion">
+						    	<option>Mes</option>
+						    </select>
+						</div>
+						<div class="col-md-4 form-group">
+							<select formControlName="anoFinalizacion">
+						    	<option>Año</option>
+						    </select>
+						</div>	
+					</div>	
+				</div>
+
+				<div class="col-md-6 form-group">
+					<label for="tipo">Tipo de contrato</label>
+					<input id="tipoContrato" type="text" formControlName="tipoContrato" value="Ordinario" required>
+				</div>
+
+			</div>	
+
+
+			<div class="row">
+
+				
+				<div class="col-md-6 form-group">
+					<label for="formaPago">Forma de pago</label>
+					<select formControlName="formaPago">
+						   <option>Consignación bancaria</option>
+					</select>
+				</div>
+
+				<div class="col-md-6 form-group">
+					<label for="plazo">Plazo de ejecución</label>
+					<div class="row">
+						<div class="col-md-4">
+							<select formControlName="diaPlazo">
+						    	<option>Día</option>
+						    </select>
+						</div>
+						<div class="col-md-4">
+							<select formControlName="mesPlazo">
+						    	<option>Mes</option>
+						    </select>
+						</div>
+						<div class="col-md-4">
+							<select formControlName="anoPlazo">
+						    	<option>Año</option>
+						    </select>
+						</div>	
+					</div>	
+				</div>
+
+			</div>
+
+
+
+			<div class="row">
+
+				
+				<div class="col-md-6 form-group">
+					<label for="periodoEntrega">Periodo de entrega</label>
+					<select formControlName="periodoEntrega">
+						   <option>Única</option>
+						   <option>Semanal</option>
+						   <option>Mensual</option>
+					</select>
+				</div>
+
+				<div class="col-md-4 form-group">
+					<label id="terminos-text" for="terminos">Términos del evento de compra</label>
+			        <div class="custom-file">
+			          <input type="file" class="custom-file-input" formControlName="terminosFile" id="terminosFile" lang="es">
+			          <label class="custom-file-label" #labelUpload for="terminosFile">Seleccionar Archivo ...</label>
+							</div>
+
+			</div>
+
+		</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6 form-group">
+					<label for="LugarEntrega">Lugar de entrega</label>
+					<select formControlName="LugarEntrega">
+						   <option>Punto de acopio</option>
+					</select>
+				</div>
+
+				
+
+			</div>
+
+			<div class="row">
+
+				
+				<div class="col-md-6">
+					<button type="submit" class="btn btn-success btn-lg form-submit-button btn_guardar">Enviar</button>
+				</div>
+
+				
+
+			</div>
+
+
+
+
+	    </form>
+
+      </div>	
+

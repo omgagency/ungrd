@@ -1,0 +1,104 @@
+<form>
+    <div class="form-row pb-3 header-search">
+        <div class="col-md-4">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <fa-icon [icon]="faSearch"></fa-icon>
+                    </span>
+                </div>
+                <input class="form-control mr-sm-2" type="search" [ngModelOptions]="{standalone: true}"
+                    [(ngModel)]="service.searchTerm" placeholder="Buscar" aria-label="Search">
+            </div>
+            <span class="ml-3" *ngIf="service.loading$ | async">Cargando...</span>
+        </div>
+        <div class="col d-flex">
+            
+            <ngb-pagination class="ml-5 mr-5" [collectionSize]="(total$ | async)!" [(page)]="service.page"
+                [pageSize]="service.pageSize">
+            </ngb-pagination>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" sortable="producto" (sort)="onSort($event)">Producto</th>
+                <th scope="col" sortable="producto" (sort)="onSort($event)">Fecha de Finalización</th>
+                <th scope="col" sortable="producto" (sort)="onSort($event)">Tipo de Contrato</th>
+                <th scope="col" sortable="producto" (sort)="onSort($event)">Forma de Pago</th>
+                <th scope="col" sortable="telefono" (sort)="onSort($event)">Plazo de Ejecución</th>
+                <th scope="col" sortable="correo" (sort)="onSort($event)">Periodo de entrega</th>
+                <th scope="col" sortable="contacto" (sort)="onSort($event)">Riesgos a Asegurar</th>
+                <th scope="col" sortable="contacto" (sort)="onSort($event)">Lugar de Entrega</th>
+                <th style="width: 10%;" scope="col" colspan="2">Acciones</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="form-control" type="search" aria-label="Search">
+                </td>
+                <td>
+                    <input class="form-control" type="search" aria-label="Search">
+                </td>
+                <td> <input class="form-control" type="search" aria-label="Search">
+                </td>
+                <td> <input class="form-control" type="search" aria-label="Search">
+                </td>
+                <td>
+                    <input class="form-control" type="search" aria-label="Search">
+                </td>
+                <td>
+                    <input class="form-control" type="search" aria-label="Search">
+                </td>
+                <td> <input class="form-control" type="search" aria-label="Search">
+                </td>
+                <td> <input class="form-control" type="search" aria-label="Search">
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let convocatoria of convocatorias$ | async">
+                <th scope="row">{{ convocatoria.id }}</th>
+                <td>
+                    <ngb-highlight [result]="convocatoria.producto" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="convocatoria.fechaFin" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="convocatoria.tipoContrato" [term]="service.searchTerm">
+                    </ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="convocatoria.formaPago" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="convocatoria.plazo" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="convocatoria.periodoEntrega" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="convocatoria.riesgos" [term]="service.searchTerm">
+                    </ngb-highlight>
+                </td>
+                <td>
+                    <ngb-highlight [result]="convocatoria.lugar" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                    <a routerLink="/admin-empresas/convocatorias/crear" class="btn btn-light">
+                        Vermás
+                    </a>
+                </td>
+                <td>
+                    <a routerLink="/admin-empresas/convocatorias/aplicar" class="btn btn-light">
+                        Aplicar
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

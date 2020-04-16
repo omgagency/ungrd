@@ -1,0 +1,159 @@
+
+
+      <div class="header_admin">
+			<div class="row">
+
+      		<div class="col-md-12">
+
+      			<h2>Detalle empresa </h2>
+
+
+      		</div>
+      		
+
+      	</div>	
+
+      </div>
+
+      <div class="main_admin">
+
+
+
+
+
+      	<form [formGroup]="empresaForm" (ngSubmit)="save(empresaForm)" novalidate autocomplete="off">
+
+	      	<div class="form-row">
+      <div class="col-md-12">
+        <h6 class="font-weight-normal">Datos de la Empresa</h6>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre de la empresa">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label id="certificado-text" for="certificado">Certificado de existencia y
+representación Legal o Registro mercantil</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" formControlName="mercantilFile" id="mercantilFile"
+            (change)="onFileChange($event.target.files,0)" lang="es">
+          <label class="custom-file-label" #labelUpload for="mercantilFile">Seleccionar Archivo ...</label>
+          
+            <!-- <button type="button" class="btn" (click)="clearInput()">Quiar Archivo</button> -->
+
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <label for="nombrecontacto">Nombre del contacto</label>
+        <input type="text" class="form-control" formControlName="nombrecontacto" placeholder="Nombre del contacto">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="telefono">Teléfono del contacto</label>
+        <input type="tel" class="form-control" formControlName="telefono" placeholder="Teléfono del contacto">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="email">E-mail del contacto</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Email del contacto">
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <label>Copia del documento de identidad del representante legal</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="fotocopiaFile" formControlName="fotocopiaFile"
+            (change)="onFileChange($event.target.files,1)">
+          <label class="custom-file-label" #labelUpload for="fotocopiaFile">Seleccionar Archivo...</label>
+        </div>
+      </div>
+
+
+     
+     
+      <div class="form-group col-md-6">
+        <label id="rup-text">RUP o estados financieros del último año (2019)</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="rupFile" formControlName="rupFile"
+            (change)="onFileChange($event.target.files,3)">
+          <label class="custom-file-label" #labelUpload for="rupFile">Seleccionar Archivo...</label>
+        </div>
+      </div>
+
+      
+
+    </div>
+    <div class="border-top border-2 mt-2 mb-4"></div>
+    <div class="form-row">
+      <div class="col-md-12">
+        <h6 class="font-weight-normal">Datos producto</h6>
+
+        Usted puede inscribirse como proveedor para la adquisición de uno o
+todos los elementos de la lista.
+      </div>
+    </div>
+
+    <div class="form-row productos mb-4" *ngFor="let producto of productos.controls;let i =  index">
+      <ng-container [formGroup]="producto">
+        <div *ngIf="productos.controls.length > 1" class="col-sm-12 text-right">
+          <button type="button" class="btn btn-danger" (click)="delete(i)">
+            Quitar
+          </button>
+        </div>
+        <div class="col-sm-12">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label class="label">Tipo de producto</label>
+              <select class="form-control" formControlName="producto" placeholder="Seleccione el Producto">
+                <option *ngFor="let producto of listaProductos">{{producto}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="label">Cantidad disponible inmediata</label>
+              <input type="text" class="form-control" formControlName="cantidad" placeholder="Escriba la cantidad.">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label class="label">Cantidad disponible semanal</label>
+              <input type="text" class="form-control" formControlName="lote" placeholder="Escriba la cantidad.">
+            </div>
+          </div>
+
+
+        </div>
+      </ng-container>
+    </div>
+
+
+
+			
+			<div class="row">
+				<div class="col-md-6">
+				 <button type="button" class="btn btn-primary btn-lg" (click)="addProducto()">Agregar
+        Producto</button>
+        		</div>
+
+				
+				<div class="col-md-6">
+					<button type="submit" class="btn btn-success btn-lg form-submit-button btn_guardar">Enviar</button>
+				</div>
+
+				
+
+			</div>
+
+
+
+
+	    </form>
+
+	
+
+      </div>	
+
